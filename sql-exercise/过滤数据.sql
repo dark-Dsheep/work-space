@@ -122,3 +122,69 @@ select vend_name
 from Vendors
 where vend_country = 'USA' and vend_state = 'CA'
 order by vend_name;
+
+-- SQL75
+DROP TABLE IF EXISTS `Products`;
+CREATE TABLE IF NOT EXISTS `Products` (
+                                          `prod_name` VARCHAR(255) NOT NULL COMMENT '产品 ID',
+                                          `prod_desc` VARCHAR(255) NOT NULL COMMENT '产品名称'
+);
+INSERT INTO `Products` VALUES ('a0011','usb'),
+                              ('a0019','iphone13'),
+                              ('b0019','gucci t-shirts'),
+                              ('c0019','gucci toy'),
+                              ('d0019','lego toy');
+
+
+select prod_name, prod_desc
+from Products
+where prod_desc like '%toy%';
+
+-- SQL76
+
+DROP TABLE IF EXISTS `Products`;
+CREATE TABLE IF NOT EXISTS `Products` (
+                                          `prod_name` VARCHAR(255) NOT NULL COMMENT '产品 ID',
+                                          `prod_desc` VARCHAR(255) NOT NULL COMMENT '产品名称'
+);
+INSERT INTO `Products` VALUES ('a0011','usb'),
+                              ('a0019','iphone13'),
+                              ('b0019','gucci t-shirts'),
+                              ('c0019','gucci toy'),
+                              ('d0019','lego toy');
+
+select prod_name, prod_desc
+from Products
+where prod_desc not like '%toy%';
+
+-- SQL77
+DROP TABLE IF EXISTS `Products`;
+CREATE TABLE IF NOT EXISTS `Products` (
+                                          `prod_name` VARCHAR(255) NOT NULL COMMENT '产品 ID',
+                                          `prod_desc` VARCHAR(255) NOT NULL COMMENT '产品名称'
+);
+INSERT INTO `Products` VALUES ('a0011','usb'),
+                              ('a0019','iphone13'),
+                              ('b0019','gucci t-shirts'),
+                              ('c0019','gucci toy'),
+                              ('d0019','lego carrots toy');
+
+select prod_name, prod_desc
+from Products
+where prod_desc like '%toy%' and prod_desc like '%carrots%';
+
+-- SQL78DROP TABLE IF EXISTS `Products`;
+CREATE TABLE IF NOT EXISTS `Products` (
+                                          `prod_name` VARCHAR(255) NOT NULL COMMENT '产品 ID',
+                                          `prod_desc` VARCHAR(255) NOT NULL COMMENT '产品名称'
+);
+INSERT INTO `Products` VALUES ('a0011','usb'),
+                              ('a0019','iphone13'),
+                              ('b0019','gucci t-shirts'),
+                              ('c0019','gucci toy'),
+                              ('d0019','lego toy carrots ');
+
+select prod_name, prod_desc
+from Products
+where prod_desc like '%toy%carrots%';
+
